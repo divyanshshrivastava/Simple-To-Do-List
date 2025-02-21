@@ -91,3 +91,48 @@ function loadTasksAfterDeletion() {
     list.innerHTML = ""; // Clear list
     loadTasks(); // Reload tasks from storage
 }
+
+
+
+
+
+
+//------------Themes part------------//
+
+const themeBtn = document.querySelector('#theme');
+
+// Load saved theme preference on page load
+document.addEventListener('DOMContentLoaded', () => {
+    if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark-theme');
+        themeBtn.textContent = 'Dark Mode'; // Set correct text on load
+    } else {
+        themeBtn.textContent = 'Light Mode';
+    }
+    updateThemeButtonStyle();
+});
+
+// Toggle Theme and Save Preference
+themeBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-theme');
+
+    if (document.body.classList.contains('dark-theme')) {
+        localStorage.setItem('theme', 'dark');
+        themeBtn.textContent = 'Dark Mode'; // Change button text
+    } else {
+        localStorage.setItem('theme', 'light');
+        themeBtn.textContent = 'Light Mode'; // Change button text
+    }
+
+    updateThemeButtonStyle();
+});
+
+// Function to apply correct styles to the theme button
+function updateThemeButtonStyle() {
+    const rootStyles = getComputedStyle(document.documentElement);
+
+    themeBtn.style.backgroundColor = rootStyles.getPropertyValue('--box-bg').trim();
+    themeBtn.style.boxShadow = rootStyles.getPropertyValue('--box-shadow').trim();
+    themeBtn.style.color = rootStyles.getPropertyValue('--text-color').trim();
+}
+
