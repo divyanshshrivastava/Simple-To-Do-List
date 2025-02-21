@@ -164,3 +164,20 @@ body {
     box-shadow: var(--box-shadow);
     color: var(--text-color);
 }
+
+/* Default Light Mode List Item Styling */
+ul li {
+    color: #36395A; /* Default text color */
+}
+
+/* Dark Mode Styles */
+.dark-theme {
+    background-color: #121212;
+    color: #E0E0E0; /* Light text for better contrast */
+}
+
+/* Change List Items Color in Dark Mode */
+.dark-theme ul li {
+    color: #E0E0E0; /* Light text for readability */
+}
+
