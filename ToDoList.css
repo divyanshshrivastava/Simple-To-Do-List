@@ -1,52 +1,42 @@
 #main-input-box {
     text-align: center;
-}
-
-#main-input-box {
     cursor: default;
 }
 
+/* Style for Input Box */
 #main-input-box input {
-    height: 2rem;
-    width: 20rem;
-    border: 2px black dashed;
-    border-radius: 100px;
+    margin-top:1.25rem;
+    height: 48px;
+    width: 22rem;
+    border-radius: 4px;
+    border: none;
+    background-color: #FCFCFD;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    color: #36395A;
+    font-size: 18px;
+    font-family: "JetBrains Mono", monospace;
     text-align: center;
-
-    &:focus {
-        border: 3px solid black;
-    }
+    outline: none;
+    transition: box-shadow .15s, transform .15s;
 }
 
-ul {
-    display: flex;
-    flex-direction: column;
-    line-height: 3rem;
-    flex-wrap: wrap;
-    height: 78vh;
+/* Input Box Focus Effect */
+#main-input-box input:focus {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    transform: translateY(-2px);
 }
 
-ul li {
-    list-style: none;
-    font-size: larger;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    cursor: default;
+/* Styled Heading */
+#main-input-box h1 {
+    font-family: "JetBrains Mono", monospace;
+    color: #36395A;
+    text-shadow: 1px 1px 5px rgba(45, 35, 66, 0.3);
+    font-size: 32px;
+    margin-bottom: 10px;
 }
 
-ul li input {
-    margin-right: 0.8rem;
-    cursor: pointer;
-}
-
-/* .checkbox {
-    display: none;
-} */
-
-.complete {
-    text-decoration: line-through;
-}
-
-.remove-button {
+/* Remove Button & Theme Button Styling */
+.remove-button, #theme {
     align-items: center;
     appearance: none;
     background-color: #FCFCFD;
@@ -68,70 +58,48 @@ ul li input {
     position: relative;
     text-align: left;
     text-decoration: none;
-    transition: box-shadow .15s,transform .15s;
+    transition: box-shadow .15s, transform .15s;
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
     white-space: nowrap;
-    will-change: box-shadow,transform;
+    will-change: box-shadow, transform;
     font-size: 18px;
-    &:focus {
-        box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
-    }
-    &:hover{
-        box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
-        transform: translateY(-2px);
-    }
-    &:active{
-        box-shadow: #D6D6E7 0 3px 7px inset;
-        transform: translateY(2px);
-    }
+}
+
+.remove-button:focus, #theme:focus {
+    box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+.remove-button:hover, #theme:hover, #main-input-box input:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    transform: translateY(-2px);
+}
+
+.remove-button:active, #theme:active {
+    box-shadow: #D6D6E7 0 3px 7px inset;
+    transform: translateY(2px);
 }
 
 #theme {
     position: absolute;
-    top:2rem;
-    left:2rem;
+    top: 2rem;
+    left: 2rem;
 }
-.button-30 {
-    align-items: center;
-    appearance: none;
-    background-color: #FCFCFD;
-    border-radius: 4px;
-    border-width: 0;
-    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
-    box-sizing: border-box;
-    color: #36395A;
-    cursor: pointer;
-    display: inline-flex;
+
+
+li {
+    list-style-type:none;
+    font-size: x-large;
+    font-weight: 400;
     font-family: "JetBrains Mono",monospace;
-    height: 48px;
-    justify-content: center;
-    line-height: 1;
-    list-style: none;
-    overflow: hidden;
-    padding-left: 16px;
-    padding-right: 16px;
-    position: relative;
-    text-align: left;
-    text-decoration: none;
-    transition: box-shadow .15s,transform .15s;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    white-space: nowrap;
-    will-change: box-shadow,transform;
-    font-size: 18px;
-    &:focus {
-        box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
-    }
-    &:hover{
-        box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
-        transform: translateY(-2px);
-    }
-    &:active{
-        box-shadow: #D6D6E7 0 3px 7px inset;
-        transform: translateY(2px);
-    }
+    line-height: 2rem;
+    color: #36395A;
+    cursor: default;
 }
-  
+
+/* Apply strikethrough when the checkbox is checked */
+.complete {
+    text-decoration: line-through;
+    color: #888; /* Optional: Dim the text color for better visibility */
+}
