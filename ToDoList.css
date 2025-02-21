@@ -103,3 +103,64 @@ li {
     text-decoration: line-through;
     color: #888; /* Optional: Dim the text color for better visibility */
 }
+
+
+
+/*Themes part*/
+
+/* Default Theme (Light Mode) */
+:root {
+    --bg-color: #f4f4f4;
+    --text-color: #36395A;
+    --box-bg: #FCFCFD;
+    --box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+/* Dark Theme */
+.dark-theme {
+    --bg-color: #1e1e1e;
+    --text-color: #f0f0f0;
+    --box-bg: #2b2b2b;
+    --box-shadow: rgba(255, 255, 255, 0.2) 0 2px 4px, rgba(255, 255, 255, 0.1) 0 7px 13px -3px, rgba(255, 255, 255, 0.2) 0 -3px 0 inset;
+}
+
+/* Apply Theme Variables */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+#main-input-box input,
+.remove-button,
+#theme {
+    background-color: var(--box-bg);
+    box-shadow: var(--box-shadow);
+    color: var(--text-color);
+}
+
+#theme {
+    background-color: var(--box-bg) !important;
+    color: var(--text-color) !important;
+}
+
+
+/* Dark Theme Styling */
+.dark-theme {
+    --bg-color: #1e1e1e;
+    --text-color: #ffffff;
+    --box-bg: #2a2a2a;
+    --box-shadow: rgba(255, 255, 255, 0.2) 0 4px 8px, rgba(255, 255, 255, 0.3) 0 7px 13px -3px, rgba(255, 255, 255, 0.1) 0 -3px 0 inset;
+}
+
+/* Apply dark theme styles */
+.dark-theme body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* Ensure Theme Button Matches Other Styled Elements */
+.dark-theme #theme {
+    background-color: var(--box-bg);
+    box-shadow: var(--box-shadow);
+    color: var(--text-color);
+}
